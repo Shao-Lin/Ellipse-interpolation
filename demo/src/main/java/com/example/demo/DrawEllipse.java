@@ -5,7 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.PixelWriter;
 import javafx.scene.paint.Color;
 
-public class DrawOval {
+public class DrawEllipse {
 
     public void drawEllipse(GraphicsContext graphicsContext, int centerX, int centerY, int a, int b) {
         int x = 0; //  текущее горизонтальное смещение относительно центра эллипса
@@ -47,9 +47,9 @@ public class DrawOval {
     public void plotEllipsePoints(int centerX, int centerY, int x, int y,final GraphicsContext graphicsContext) {
         final PixelWriter pixelWriter = graphicsContext.getPixelWriter();
         pixelWriter.setColor( centerX + x,  centerY + y, Color.BLACK);
-        pixelWriter.setColor( centerX - x,  centerY + y, Color.RED); // нижняя половина
-        pixelWriter.setColor( centerX + x,  centerY - y, Color.BLUE);
-        pixelWriter.setColor( centerX - x,  centerY - y, Color.GREEN); // верхняя половина
+        pixelWriter.setColor( centerX - x,  centerY + y, Color.BLACK); // нижняя половина
+        pixelWriter.setColor( centerX + x,  centerY - y, Color.BLACK);
+        pixelWriter.setColor( centerX - x,  centerY - y, Color.BLACK); // верхняя половина
     }
 
 }
